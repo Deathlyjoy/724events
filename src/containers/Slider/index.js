@@ -11,10 +11,13 @@ const Slider = () => {
     new Date(evtA.date) > new Date(evtB.date) ? -1 : 1 //Changement du signe < en > afin d'effectuer un défilement des évènements décroissant
   );
   const nextCard = () => {
-    setTimeout(
-      // Suppression de la page blanche du slider : ajout du -1 à byDateDesc.length afin index + 1 ne dépasse pas la longueur du tableau
-      () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0), 5000
-    );
+    // Pour éviter d'avoir une erreur console sur le length d'un élément considéré comme undefined
+    if (byDateDesc && byDateDesc.length>0){
+      setTimeout(
+        // Suppression de la page blanche du slider : ajout du -1 à byDateDesc.length afin index + 1 ne dépasse pas la longueur du tableau
+        () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0), 5000
+      );
+    }
   };
   useEffect(() => {
     nextCard();
@@ -22,7 +25,7 @@ const Slider = () => {
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
-        <>
+        <div key={event.title}>
           <div
             key={event.title}
             className={`SlideCard SlideCard--${
@@ -50,7 +53,7 @@ const Slider = () => {
               ))}
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );
