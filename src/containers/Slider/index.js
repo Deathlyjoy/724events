@@ -12,7 +12,7 @@ const Slider = () => {
   );
   const nextCard = () => {
     // Pour éviter d'avoir une erreur console sur le length d'un élément considéré comme undefined
-    if (byDateDesc && byDateDesc.length>0){
+    if (byDateDesc){
       setTimeout(
         // Suppression de la page blanche du slider : ajout du -1 à byDateDesc.length afin index + 1 ne dépasse pas la longueur du tableau
         () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0), 5000
@@ -45,7 +45,7 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
                 <input
-                  key={`${radioIdx + 1}`} // // Modification sinon la key reste fixe dans la boucle car event ne fait pas parti des paramètres
+                  key={`${radioIdx + 1}`} // Modification sinon la key reste fixe dans la boucle car event ne fait pas parti des paramètres
                   type="radio"
                   name="radio-button"
                   checked={index === radioIdx} // Remplacement par index, car idx est l'index de la boucle
