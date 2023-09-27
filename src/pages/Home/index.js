@@ -128,7 +128,7 @@ const Page = () => {
           />
           ) : (
             null
-          )};
+          )}
         {/* <EventCard
           imageSrc={last?.cover}
           title={last?.title}

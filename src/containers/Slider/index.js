@@ -45,7 +45,7 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
                 <input
-                  key={`${event.id}`}
+                  key={`${radioIdx + 1}`} // // Modification sinon la key reste fixe dans la boucle car event ne fait pas parti des paramètres
                   type="radio"
                   name="radio-button"
                   checked={index === radioIdx} // Remplacement par index, car idx est l'index de la boucle
