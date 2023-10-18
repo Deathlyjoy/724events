@@ -15,7 +15,7 @@ import { useData } from "../../contexts/DataContext";
 const Page = () => {
   //const {last} = useData() - Mettre le useData sur {data} puis rajouter la fonction de tri sur "last" afin d'avoir le dernier événèment
   const { data } = useData()
-  const last = data?.events[data.events.length +1];
+  const last = data?.events[data.events.length - 1];
   return <>
     <header>
       <Menu />
