@@ -43,4 +43,3 @@ describe("When a page is created", () => {
   })
 });
 
-

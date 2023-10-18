@@ -16,7 +16,7 @@ const Select = ({
   const [value, setValue] = useState();
   const [collapsed, setCollapsed] = useState(true);
   const changeValue = (newValue) => {
-    onChange(newValue); // Ajout de newValue comme paramètre de onChange
+    onChange(newValue); // Ajout de newValue comme paramètre de onChange -> résolution bug tri
     setValue(newValue);
     setCollapsed(newValue);
   };

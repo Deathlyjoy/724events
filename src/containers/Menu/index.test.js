@@ -27,7 +27,6 @@ describe("When Menu is created", () => {
   // ----------------- Tests supplémentaires des liens de la navbar ----------------- //
   it("When click on Nos services button", () => {
     render(<Menu />);
-    
     expect(screen.getByText("Nos services")).toHaveAttribute(
       "href",
       "#nos-services"
@@ -36,7 +35,6 @@ describe("When Menu is created", () => {
 
   it("When click on Nos réalisations button", () => {
     render(<Menu />);
-    
     expect(screen.getByText("Nos réalisations")).toHaveAttribute(
       "href",
       "#nos-realisations"
@@ -45,7 +43,6 @@ describe("When Menu is created", () => {
 
   it("When click on Notre équipe button", () => {
     render(<Menu />);
-    
     expect(screen.getByText("Notre équipe")).toHaveAttribute(
       "href",
       "#notre-equipe"
