@@ -23,4 +23,35 @@ describe("When Menu is created", () => {
       expect(window.document.location.hash).toEqual("#contact");
     });
   });
+
+  // ----------------- Tests supplémentaires des liens de la navbar ----------------- //
+  it("When click on Nos services button", () => {
+    render(<Menu />);
+    
+    expect(screen.getByText("Nos services")).toHaveAttribute(
+      "href",
+      "#nos-services"
+    );
+  });
+
+  it("When click on Nos réalisations button", () => {
+    render(<Menu />);
+    
+    expect(screen.getByText("Nos réalisations")).toHaveAttribute(
+      "href",
+      "#nos-realisations"
+    );
+  });
+
+  it("When click on Notre équipe button", () => {
+    render(<Menu />);
+    
+    expect(screen.getByText("Notre équipe")).toHaveAttribute(
+      "href",
+      "#notre-equipe"
+    );
+  });
+
+
+  
 });
