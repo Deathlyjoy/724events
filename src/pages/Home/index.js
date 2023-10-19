@@ -13,9 +13,7 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  //const {last} = useData() - Mettre le useData sur {data} puis rajouter la fonction de tri sur "last" afin d'avoir le dernier événèment
-  const { data } = useData()
-  const last = data?.events[data.events.length - 1];
+  const { last } = useData();
   return <>
     <header>
       <Menu />
@@ -118,24 +116,13 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        {last && last.cover && last.title ? (
           <EventCard
-            imageSrc={last.cover}
-            title={last.title}
+            imageSrc={last?.cover}
+            title={last?.title}
             date={new Date(last?.date)}
             small
-            label="expérience digitale"
+            label={last?.type} // Modification du label afin d'afficher le bon type de l'évènement
           />
-          ) : (
-            null
-          )}
-        {/* <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
-        /> */}
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
